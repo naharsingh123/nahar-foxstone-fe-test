@@ -1,0 +1,129 @@
+<div class="row" *ngIf="offeringsArray && offeringsArray.length">
+  <div class="col-md-6 pr-0">
+        <img class="img-fluid w-100" [src]="offeringsArray[0].images && offeringsArray[0].images[0].url?('http://'+ offeringsArray[0].images[0].url):'assets/images/samples/300x300/4.jpg'" alt="">  
+  </div>
+  <div class="col-md-6 pl-0">
+    <div class="card">
+      <div >
+        <div class="address_title">
+            <h4 >{{offeringsArray[0].name}}</h4>
+              <p class="">{{offeringsArray[0].location.city}} {{offeringsArray[0].location.country}}</p>
+          </div>
+           <div class="card-body pt-0">
+              <div class="row border_bottom ">
+                  <div class="col-md-4">Available to invest</div>
+                     <div class="col-md-8">
+                         <h5 class="mb-3">CHF {{offeringsArray[0].available_to_invest}}</h5>
+                     </div>
+              </div> 
+                <progress-bar [progress]="offeringsArray[0].progress"  [color-degraded]="{'0': '#00cbcb',  '15': '#f9c3d3', '25': '#fd8c8e'}"></progress-bar>
+              <div class="row border_bottom">
+                  <div class="col-md-3">Purchase Cost</div>
+                     <div class="col-md-3">
+                        <span class="mb-3">CHF {{offeringsArray[0].purchase_price}} </span>
+                       </div>
+                       <div class="col-md-3">Mortage(LTV)</div>
+                       <div class="col-md-3">
+                         <span class="mb-3">{{offeringsArray[0].loan_to_value}}%</span>
+                        </div>
+                   </div>
+                <div class="row border_bottom">
+                     <div class="col-md-3">Min Investment</div>
+                     <div class="col-md-3">
+                         <span class="mb-3">{{offeringsArray[0].minimum_investment}}</span>
+                      </div>
+                    <div class="col-md-3">Holding Period</div>
+                        <div class="col-md-3">
+                           <span class="mb-3">{{offeringsArray[0].holding_period}}</span>
+                        </div>
+                     </div>
+                  <div class="row border_bottom">
+                       <div class="col-md-3">Investment type</div>
+                       <div class="col-md-3">
+                           <span class="mb-3">{{offeringsArray[0].type}}</span>
+                         </div>
+                      <div class="col-md-3">Expected return on equity</div>
+                         <div class="col-md-3">
+                             <span class="mb-3">{{offeringsArray[0].expected_roi}}%</span>
+                          </div>
+                      </div>
+                      <div class="text-center p-1">
+                          <button type="button" class="btn btn-orange btn-fw mt-3">More Details</button>
+                       </div>
+                  </div>
+              </div>
+           </div>
+        </div>
+      </div>
+      
+<div class="row" *ngIf="offeringsArray && offeringsArray.length">
+     <!-- <div *ngFor="let data of offeringsArray;let i=index"> -->
+        <!-- <div > -->
+            <div  *ngFor="let data of newArray;let i=index" class="col-md-3 ">   
+              <div class="card" >
+                   <div>
+                        <div class="address_title">
+                           <h4 >{{data.name}}</h4>
+                              <p class="">{{data.location.city}} {{data.location.country}}</p>
+                         </div>
+                         <div>
+                             <img class="img-fluid w-100 rounded" [src]="data.images && data.images[0].url?('http://'+ data.images[0].url):'assets/images/samples/300x300/4.jpg'" alt="">
+                         </div>
+                    <div class="card-body">
+                       <div class="row border_bottom ">
+                             <div class="col-md-4">Available to invest</div>
+                             <div class="col-md-8">
+                                  <h5 class="mb-3">CHF {{data.available_to_invest}}</h5>
+                             </div>
+                        </div>
+                        <progress-bar [progress]="data.progress"  [color-degraded]="{'0': '#00cbcb',  '15': '#f9c3d3', '25': '#fd8c8e'}"></progress-bar>
+                        <div class="row border_bottom">
+                            <div class="col-md-6">Purchase Cost</div>
+                            <div class="col-md-6">
+                              <span class="mb-6">CHF {{data.purchase_price}} </span>
+                            </div>
+                          </div>
+                          <div class="row border_bottom">
+                              <div class="col-md-6">Mortage(LTV)</div>
+                              <div class="col-md-6">
+                                <span class="mb-6">{{data.loan_to_value}}%</span>
+                              </div>
+                          </div>
+
+                         
+                          <div class="row border_bottom">
+                              <div class="col-md-6">Min Investment</div>
+                              <div class="col-md-6">
+                                <span class="mb-6">{{data.minimum_investment}}</span>
+                              </div>
+                            
+                            </div>
+                            <div class="row border_bottom">
+                                <div class="col-md-6">Holding Period</div>
+                                <div class="col-md-6">
+                                  <span class="mb-6">{{data.holding_period}}</span>
+                                </div>
+                            </div>
+                            <div class="row border_bottom">
+                                <div class="col-md-6">Investment type</div>
+                                   <div class="col-md-6">
+                                      <span class="mb-6">{{data.type}}</span>
+                                   </div>
+                            
+                              </div>
+                              <div class="row border_bottom">
+                                  <div class="col-md-6">Expected return on equity</div>
+                                  <div class="col-md-6">
+                                    <span class="mb-6">{{data.expected_roi}}%</span>
+                                  </div>
+                              </div>
+                              <div class="text-center p-1">
+                                  <button type="button" class="btn btn-orange btn-fw mt-3">More Details</button>
+                              </div>
+                          </div>
+                     </div>
+               </div>
+            </div>
+        <!-- </div> -->
+     <!-- </div> -->
+   </div>

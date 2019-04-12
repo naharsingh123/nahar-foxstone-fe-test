@@ -1,0 +1,19 @@
+@import '../../styles';
+.address_title{
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+   background: black;
+   color: $white
+}
+.btn-orange{
+    background: $orange;
+    color:$white
+}
+.card-body{
+    font-size: 12px;
+}
+.border_bottom{
+    border-bottom: 1px solid #f3f3f3;
+    padding: 10px;
+}
